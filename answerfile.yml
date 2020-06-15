@@ -1,0 +1,114 @@
+
+esxIso: '/root/ISOs/VMware-VMvisor-Installer-6.7.0-13006603.x86_64.iso'
+vcIso: '/root/ISOs/VMware-VCSA-all-6.7.0-13010631.iso'
+
+physicalESX:
+  host: 'localhost.localdomain'
+  user: 'root' 
+  password: 'Parr0011!' 
+  vlan: 48
+  vswitch: vSwitch0
+
+
+vcenter:
+  ip: '10.114.209.229' 
+  mask: '27'
+  gw: '10.114.209.225'
+  network: 'Infrastructure' 
+  name: 'vcenter.yasen.local' 
+  psc_name: 'vcenter.yasen.local' 
+  psc_ip: '10.114.209.229' 
+  thin: 'true'
+  user: 'administrator@yasen.local' 
+  password: 'VMware1!' 
+  datacenter: 'MyDC1'
+  datastore: 'Datastore' 
+  domain: 'yasen.local'
+
+vc_mng:
+  ip: '10.114.209.229' 
+  mask: '27'
+  gw: '10.114.209.225'
+  network: 'Infrastructure'
+  name: 'vcenter.yasen.local' 
+  user: 'administrator@yasen.local' 
+  password: 'VMware1!' 
+  datacenter: 'MyDC1' 
+  datastore: 'Datastore'
+  domain: 'yasen.local'
+
+dns1: '10.114.209.60'
+dns2: '8.8.8.8'
+ntp_server: '10.166.17.90'
+domain: 'yasen.local'
+
+clusters: 
+
+  Management:
+    ha: False
+    drs: False
+    vsan: False
+  Compute:
+    ha: False
+    drs: True
+    vsan: True
+
+
+vmotion_vlan: 1078
+vmotion_mask: 255.255.255.0
+vmotion_gw: 172.16.122.250
+
+
+vsan_vlan: 1079
+vsan_mask: 255.255.255.0
+vsan_gw: 172.16.123.250
+
+vESX:
+  esxi1:
+    ip: 10.114.209.231
+    mask: 255.255.255.224
+    gw: 10.114.209.225
+    mng_cluster: 'Management' 
+    cluster: Compute 
+    vlan: 48 
+    cpu: 8 
+    ram: 65536 
+    hdd: 180 
+    vmotion_ip: 172.16.122.1 
+    vsan_ip: 172.16.123.1 
+  esxi2:
+    ip: 10.114.209.232
+    mask: 255.255.255.224
+    gw: 10.114.209.225
+    mng_cluster: 'Management' 
+    cluster: Compute 
+    vlan: 48 
+    cpu: 8 
+    ram: 65536 
+    hdd: 180 
+    vmotion_ip: 172.16.122.2 
+    vsan_ip: 172.16.123.2 
+  esxi3:
+    ip: 10.114.209.233
+    mask: 255.255.255.224
+    gw: 10.114.209.225
+    mng_cluster: 'Management' 
+    cluster: Compute 
+    vlan: 48 
+    cpu: 8 
+    ram: 65536 
+    hdd: 180 
+    vmotion_ip: 172.16.122.3
+    vsan_ip: 172.16.123.3 
+  esxi4:
+    ip: 10.114.209.234
+    mask: 255.255.255.224
+    gw: 10.114.209.225
+    mng_cluster: 'Management' 
+    cluster: Compute 
+    vlan: 48 
+    cpu: 8 
+    ram: 65536 
+    hdd: 180 
+    vmotion_ip: 172.16.122.4 
+    vsan_ip: 172.16.123.4 
