@@ -3,7 +3,7 @@ esxIso: '/root/ISOs/VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso'
 vcIso: '/root/ISOs/VMware-VCSA-all-7.0.0-16189094.iso'
 
 physicalESX:
-  host: 'localhost.localdomain'
+  host: 'narcis.localdomain'
   user: 'root' 
   password: 'Parr0011!' 
   vlan: 48
