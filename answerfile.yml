@@ -1,6 +1,6 @@
 
-esxIso: '/root/ISOs/VMware-VMvisor-Installer-7.0-13006603.x86_64.iso'
-vcIso: '/root/ISOs/VMware-VCSA-all-7.0-13010631.iso'
+esxIso: '/root/ISOs/VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso'
+vcIso: '/root/ISOs/VMware-VCSA-all-7.0.0-16189094.iso'
 
 physicalESX:
   host: 'localhost.localdomain'
