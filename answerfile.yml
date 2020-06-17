@@ -3,9 +3,9 @@ esxIso: '/root/ISOs/VMware-VMvisor-Installer-201507001-2809209.x86_64.iso'
 vcIso: '/root/ISOs/VMware-VCSA-all-6.5.0-7070488.iso'
 
 physicalESX:
-  host: '192.168.0.146'
+  host: 'ESXi-01.narcis.local'
   user: 'root' 
-  password: 'Parr0011!' 
+  password: 'VMware1!' 
   vlan: 0
   vswitch: vSwitch0
 
@@ -15,32 +15,32 @@ vcenter:
   mask: '24'
   gw: '192.168.0.1'
   network: 'Infrastructure' 
-  name: 'vcenter.narcis.com' 
-  psc_name: 'vcenter.narcis.com' 
+  name: 'vcenter.narcis.local' 
+  psc_name: 'vcenter.narcis.local' 
   psc_ip: '191.168.0.150' 
   thin: 'true'
-  user: 'administrator@narcis.com' 
+  user: 'administrator@narcis.local' 
   password: 'VMware1!' 
   datacenter: 'MyDC1'
   datastore: 'Datastore' 
-  domain: 'narcis.com'
+  domain: 'narcis.local'
 
 vc_mng:
   ip: '192.168.0.150' 
   mask: '24'
   gw: '192.168.0.1'
   network: 'Infrastructure'
-  name: 'vcenter.narcis.com' 
-  user: 'administrator@narcis.com' 
+  name: 'vcenter.narcis.local' 
+  user: 'administrator@narcis.local' 
   password: 'VMware1!' 
   datacenter: 'MyDC1' 
   datastore: 'Datastore'
-  domain: 'narcis.com'
+  domain: 'narcis.local'
 
 dns1: '4.2.2.2'
 dns2: '8.8.8.8'
 ntp_server: '10.166.17.90'
-domain: 'narcis.com'
+domain: 'narcis.local'
 
 clusters: 
 
