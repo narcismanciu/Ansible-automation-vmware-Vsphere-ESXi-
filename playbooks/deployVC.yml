@@ -16,7 +16,7 @@
         - vcenter.ip  ==  vcenter.psc_ip
 
     - debug:
-        msg: "Next step will take about 20 minutes if VC has not been previously deployed, so go grab some coffee !!!"
+        msg: "Next step will take about 20 minutes"
 
     - name: Perform VC CLI Install
       command: "./vcsa-deploy install --accept-eula --no-ssl-certificate-verification --acknowledge-ceip /tmp/vCSA_on_ESXi.json"
