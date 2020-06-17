@@ -1,46 +1,46 @@
 
-esxIso: '/root/ISOs/VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso'
-vcIso: '/root/ISOs/VMware-VCSA-all-7.0.0-16189094.iso'
+esxIso: '/root/ISOs/VMware-VMvisor-Installer-201507001-2809209.x86_64.iso'
+vcIso: '/root/ISOs/VMware-VCSA-all-6.5.0-7070488.iso'
 
 physicalESX:
-  host: 'narcis.localdomain'
+  host: '192.168.0.146'
   user: 'root' 
   password: 'Parr0011!' 
-  vlan: 48
+  vlan: 0
   vswitch: vSwitch0
 
 
 vcenter:
-  ip: '10.114.209.229' 
-  mask: '27'
-  gw: '10.114.209.225'
+  ip: '192.168.0.150' 
+  mask: '24'
+  gw: '192.168.0.1'
   network: 'Infrastructure' 
-  name: 'vcenter.yasen.local' 
-  psc_name: 'vcenter.yasen.local' 
-  psc_ip: '10.114.209.229' 
+  name: 'vcenter.narcis.com' 
+  psc_name: 'vcenter.narcis.com' 
+  psc_ip: '191.168.0.150' 
   thin: 'true'
-  user: 'administrator@yasen.local' 
+  user: 'administrator@narcis.com' 
   password: 'VMware1!' 
   datacenter: 'MyDC1'
   datastore: 'Datastore' 
-  domain: 'yasen.local'
+  domain: 'narcis.com'
 
 vc_mng:
-  ip: '10.114.209.229' 
-  mask: '27'
-  gw: '10.114.209.225'
+  ip: '192.168.0.150' 
+  mask: '24'
+  gw: '192.168.0.1'
   network: 'Infrastructure'
-  name: 'vcenter.yasen.local' 
-  user: 'administrator@yasen.local' 
+  name: 'vcenter.narcis.com' 
+  user: 'administrator@narcis.com' 
   password: 'VMware1!' 
   datacenter: 'MyDC1' 
   datastore: 'Datastore'
-  domain: 'yasen.local'
+  domain: 'narcis.com'
 
 dns1: '4.2.2.2'
 dns2: '8.8.8.8'
 ntp_server: '10.166.17.90'
-domain: 'yasen.local'
+domain: 'narcis.com'
 
 clusters: 
 
