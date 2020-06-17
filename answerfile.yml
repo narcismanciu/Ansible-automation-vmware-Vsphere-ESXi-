@@ -37,7 +37,7 @@ vc_mng:
   datastore: 'Datastore'
   domain: 'yasen.local'
 
-dns1: '10.114.209.60'
+dns1: '4.2.2.2'
 dns2: '8.8.8.8'
 ntp_server: '10.166.17.90'
 domain: 'yasen.local'
@@ -71,44 +71,9 @@ vESX:
     mng_cluster: 'Management' 
     cluster: Compute 
     vlan: 48 
-    cpu: 8 
-    ram: 65536 
-    hdd: 180 
+    cpu: 2 
+    ram: 2048 
+    hdd: 60 
     vmotion_ip: 172.16.122.1 
     vsan_ip: 172.16.123.1 
-  esxi2:
-    ip: 10.114.209.232
-    mask: 255.255.255.224
-    gw: 10.114.209.225
-    mng_cluster: 'Management' 
-    cluster: Compute 
-    vlan: 48 
-    cpu: 8 
-    ram: 65536 
-    hdd: 180 
-    vmotion_ip: 172.16.122.2 
-    vsan_ip: 172.16.123.2 
-  esxi3:
-    ip: 10.114.209.233
-    mask: 255.255.255.224
-    gw: 10.114.209.225
-    mng_cluster: 'Management' 
-    cluster: Compute 
-    vlan: 48 
-    cpu: 8 
-    ram: 65536 
-    hdd: 180 
-    vmotion_ip: 172.16.122.3
-    vsan_ip: 172.16.123.3 
-  esxi4:
-    ip: 10.114.209.234
-    mask: 255.255.255.224
-    gw: 10.114.209.225
-    mng_cluster: 'Management' 
-    cluster: Compute 
-    vlan: 48 
-    cpu: 8 
-    ram: 65536 
-    hdd: 180 
-    vmotion_ip: 172.16.122.4 
-    vsan_ip: 172.16.123.4 
+  
