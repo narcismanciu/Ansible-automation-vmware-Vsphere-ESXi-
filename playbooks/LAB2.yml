@@ -120,6 +120,6 @@
      - name: Asteapta 10 secunde pana cand VM-urile devin up and running
        pause: seconds=10
      - name:
-        msg: "Next step will take about 20 minutes if VC has not been previously deployed, so go grab some coffee !!!"
+        msg: "Laboratorul 2 s-a instalat cu succes!!!"
    
 
