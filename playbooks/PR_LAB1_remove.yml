@@ -1,0 +1,43 @@
+---
+- name: Stergere portgroup laboratorul 1
+  hosts: localhost
+  gather_facts: False
+  vars_files:
+    - ../answerfile.yml
+  tasks:
+    - name: Departamentul IT
+      vmware_portgroup:
+        hostname: "{{ physicalESX.host }}"
+        esxi_hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        switch: vSwitch0
+        portgroup: Departamentul IT
+        vlan_id: 10
+        state: absent
+        validate_certs: False
+      delegate_to: localhost
+    - name: Departamentul Studenti
+      vmware_portgroup:
+        hostname: "{{ physicalESX.host }}"
+        esxi_hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        switch: vSwitch0
+        portgroup: Departamentul Studenti
+        vlan_id: 20
+        state: absent
+        validate_certs: False
+      delegate_to: localhost
+    - name: Departamentul Profesori
+      vmware_portgroup:
+        hostname: "{{ physicalESX.host }}"
+        esxi_hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        switch: vSwitch0
+        portgroup: Departamentul Profesori
+        vlan_id: 30
+        state: absent
+        validate_certs: False
+      delegate_to: localhost

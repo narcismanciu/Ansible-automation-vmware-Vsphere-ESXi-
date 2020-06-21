@@ -1,0 +1,49 @@
+---
+- name: Instalare portgroup
+  hosts: localhost
+  gather_facts: False
+  vars_files:
+    - ../answerfile.yml
+  tasks:
+    - name: Crearea infrastructurii portgroup 1 Vswitch0
+      vmware_portgroup:
+        hostname: "{{ physicalESX.host }}"
+        esxi_hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"
+        switch_name: "{{ physicalESX.vswitch }}"
+        portgroup_name: "Departamentul IT"
+        vlan_id: 10
+        network_policy:
+          promiscuous_mode: True
+        validate_certs: False
+    - name: Crearea infrastructurii portgroup 2 Vswitch0
+      vmware_portgroup:
+        hostname: "{{ physicalESX.host }}"
+        esxi_hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"
+        switch_name: "{{ physicalESX.vswitch }}"
+        portgroup_name: "Departamentul Studenti"
+        vlan_id: 20
+        network_policy:
+          promiscuous_mode: True
+          forged_transmits: True
+          mac_changes: True
+        validate_certs: False
+    - name: Crearea infrastructurii portgroup 3 Vswitch0
+      vmware_portgroup:
+        hostname: "{{ physicalESX.host }}"
+        esxi_hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"
+        switch_name: "{{ physicalESX.vswitch }}"
+        portgroup_name: "Departamentul Profesori"
+        vlan_id: 30
+        network_policy:
+          promiscuous_mode: True
+        validate_certs: False
+    - name: Asteapta 5 secunde pana cand port group-urile devin valabile
+      pause: seconds=5
+
+       

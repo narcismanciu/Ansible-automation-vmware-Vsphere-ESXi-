@@ -1,0 +1,5 @@
+---
+- import_playbook: playbooks/LAB1SW.yml
+- import_playbook: playbooks/LAB1.yml
+
+

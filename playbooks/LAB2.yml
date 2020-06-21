@@ -1,0 +1,121 @@
+---
+- name: Instalare masini virtuale laboratorul 1
+  hosts: localhost
+  gather_facts: False
+  vars_files:
+    - ../answerfile.yml
+  tasks:
+     - name: Instalarea masini virtuale HR(VM1)
+       vmware_guest:
+         hostname: "{{ physicalESX.host }}"
+         username: "{{ physicalESX.user }}"
+         password: "{{ physicalESX.password }}"
+         validate_certs: no
+         folder: / 
+         name: VM_HR_1
+         state: poweredon
+         guest_id: centos64Guest
+         disk:
+         - size_gb: 1
+           type: thin
+           datastore: datastore1
+         hardware:
+           memory_mb: 512
+           num_cpus: 1
+           scsi: paravirtual
+         cdrom:
+           type: iso
+           iso_path: "[datastore1] Tiny-Linux.iso"
+         networks: 
+         - name: HR
+           device_type: vmxnet3
+           type: dhcp
+         wait_for_ip_address: no
+       delegate_to: localhost
+       register: deploy_vm
+     - name: Instalarea masini virtuale HR(VM2) 
+       vmware_guest:
+         hostname: "{{ physicalESX.host }}"
+         username: "{{ physicalESX.user }}"
+         password: "{{ physicalESX.password }}"
+         validate_certs: no
+         folder: / 
+         name: VM_HR_2
+         state: poweredon
+         guest_id: centos64Guest
+         disk:
+         - size_gb: 1
+           type: thin
+           datastore: datastore1
+         hardware:
+           memory_mb: 256
+           num_cpus: 1
+           scsi: paravirtual
+         cdrom:
+           type: iso
+           iso_path: "[datastore1] Tiny-Linux.iso"
+         networks: 
+         - name: HR          
+           device_type: vmxnet3
+           type: dhcp
+         wait_for_ip_address: no
+       delegate_to: localhost
+       register: deploy_vm
+     - name: Instalare masini virtuale Secretariat(VM1)
+       vmware_guest:
+         hostname: "{{ physicalESX.host }}"
+         username: "{{ physicalESX.user }}"
+         password: "{{ physicalESX.password }}"
+         validate_certs: no
+         folder: / 
+         name: VM_ST_1
+         state: poweredon
+         guest_id: centos64Guest
+         disk:
+         - size_gb: 1
+           type: thin
+           datastore: datastore1
+         hardware:
+           memory_mb: 512
+           num_cpus: 1
+           scsi: paravirtual
+         cdrom:
+           type: iso
+           iso_path: "[datastore1] Tiny-Linux.iso"
+         networks: 
+         - name: Secretariat
+           device_type: vmxnet3
+           type: dhcp
+         wait_for_ip_address: no
+       delegate_to: localhost
+       register: deploy_vm
+     - name: Instalare masini virtuale Secretariat(VM2)
+       vmware_guest:
+         hostname: "{{ physicalESX.host }}"
+         username: "{{ physicalESX.user }}"
+         password: "{{ physicalESX.password }}"
+         validate_certs: no
+         folder: / 
+         name: VM_ST_2
+         state: poweredon
+         guest_id: centos64Guest
+         disk:
+         - size_gb: 1
+           type: thin
+           datastore: datastore1
+         hardware:
+           memory_mb: 512
+           num_cpus: 1
+           scsi: paravirtual
+         cdrom:
+           type: iso
+           iso_path: "[datastore1] Tiny-Linux.iso"
+         networks: 
+         - name: Secretariat
+           device_type: vmxnet3
+           type: dhcp
+         wait_for_ip_address: no
+       delegate_to: localhost
+       register: deploy_vm
+   
+
