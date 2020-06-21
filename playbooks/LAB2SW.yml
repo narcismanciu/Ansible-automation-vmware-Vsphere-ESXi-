@@ -32,5 +32,5 @@
           mac_changes: True
         validate_certs: False
     - name: Asteapta 5 secunde pana cand portgroup-urile devin valabile
-       pause: seconds=5
+      pause: seconds=5
        
