@@ -119,7 +119,7 @@
        register: deploy_vm
      - name: Asteapta 10 secunde pana cand VM-urile devin up and running
        pause: seconds=10
-     - name:
-        msg: "Laboratorul 2 s-a instalat cu succes!!!"
+     - debug:
+         msg: "Laboratorul 2 s-a instalat cu succes!!!"
    
 
