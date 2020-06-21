@@ -1,0 +1,7 @@
+---
+- import_playbook: playbooks/VM_LAB1_remove.yml
+- import_playbook: playbooks/PR_LAB1_remove.yml
+- import_playbook: playbooks/LAB2SW.yml
+- import_playbook: playbooks/LAB2.yml
+
+

@@ -1,0 +1,198 @@
+---
+- name: Decuplare masini virtuale laboratorul 1
+  hosts: localhost
+  gather_facts: False
+  vars_files:
+    - ../answerfile.yml
+  tasks:
+    - name: Poweroff VM_IT_1
+      vmware_guest_powerstate:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_IT_1
+        state: powered-off
+      delegate_to: localhost
+      register: deploy
+    - name: Asteapta 5 secunde pana cand masina se opreste
+      pause: seconds=5
+    - name: Stergere VM_IT_1
+      vmware_guest:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_IT_1
+        state: absent
+      delegate_to: localhost
+    - name: Poweroff VM_IT_2
+      vmware_guest_powerstate:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_IT_2
+        state: powered-off
+      delegate_to: localhost
+      register: deploy
+    - name: Asteapta 5 secunde pana cand masina se opreste
+      pause: seconds=5
+    - name: Stergere VM_IT_2
+      vmware_guest:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_IT_2
+        state: absent
+      delegate_to: localhost
+    - name: Poweroff VM_PR_1
+      vmware_guest_powerstate:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_PR_1
+        state: powered-off
+      delegate_to: localhost
+      register: deploy
+    - name: Asteapta 5 secunde pana cand masina se opreste
+      pause: seconds=5
+    - name: Stergere VM_PR_1
+      vmware_guest:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_PR_1
+        state: absent
+      delegate_to: localhost
+    - name: Poweroff VM_PR_2
+      vmware_guest_powerstate:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_PR_2
+        state: powered-off
+      delegate_to: localhost
+      register: deploy
+    - name: Asteapta 5 secunde pana cand masina se opreste
+      pause: seconds=5
+    - name: Stergere VM_PR_2
+      vmware_guest:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_PR_2
+        state: absent
+      delegate_to: localhost
+      register: deploy
+    - name: Poweroff VM_ST_1
+      vmware_guest_powerstate:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_ST_1
+        state: powered-off
+      delegate_to: localhost
+      register: deploy
+    - name: Asteapta 5 secunde pana cand masina se opreste
+      pause: seconds=5
+    - name: Stergere VM_ST_1
+      vmware_guest:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_ST_1
+        state: absent
+      delegate_to: localhost
+    - name: Poweroff VM_ST_2
+      vmware_guest_powerstate:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_ST_2
+        state: powered-off
+      delegate_to: localhost
+      register: deploy
+    - name: Asteapta 5 secunde pana cand masina se opreste
+      pause: seconds=5
+    - name: Stergere VM_ST_2
+      vmware_guest:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_ST_2
+        state: absent
+      delegate_to: localhost
+    - name: Poweroff VM_ST_3
+      vmware_guest_powerstate:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_ST_3
+        state: powered-off
+      delegate_to: localhost
+      register: deploy
+    - name: Asteapta 5 secunde pana cand masina se opreste
+      pause: seconds=5
+    - name: Stergere VM_ST_3
+      vmware_guest:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_ST_3
+        state: absent
+      delegate_to: localhost
+    - name: Poweroff VM_ST_4
+      vmware_guest_powerstate:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_ST_4
+        state: powered-off
+      delegate_to: localhost
+      register: deploy
+    - name: Asteapta 5 secunde pana cand masina se opreste
+      pause: seconds=5
+    - name: Stergere VM_ST_4
+      vmware_guest:
+        hostname: "{{ physicalESX.host }}"
+        username: "{{ physicalESX.user }}"
+        password: "{{ physicalESX.password }}"        
+        validate_certs: no
+        folder: /
+        name: VM_ST_4
+        state: absent
+      delegate_to: localhost
+
+
+
+    
+
+

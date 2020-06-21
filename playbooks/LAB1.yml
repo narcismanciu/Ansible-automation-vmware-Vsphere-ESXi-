@@ -1,0 +1,235 @@
+---
+- name: Instalare masini virtuale laboratorul 1
+  hosts: localhost
+  gather_facts: False
+  vars_files:
+    - ../answerfile.yml
+  tasks:
+     - name: Instalarea masini virtuale Departamentul IT(VM1)
+       vmware_guest:
+         hostname: "{{ physicalESX.host }}"
+         username: "{{ physicalESX.user }}"
+         password: "{{ physicalESX.password }}"
+         validate_certs: no
+         folder: / 
+         name: VM_IT_1
+         state: poweredon
+         guest_id: centos64Guest
+         disk:
+         - size_gb: 1
+           type: thin
+           datastore: datastore1
+         hardware:
+           memory_mb: 512
+           num_cpus: 1
+           scsi: paravirtual
+         cdrom:
+           type: iso
+           iso_path: "[datastore1] Core-11.1.iso"
+         networks: 
+         - name: Departamentul IT
+           device_type: vmxnet3
+           type: dhcp
+         wait_for_ip_address: no
+       delegate_to: localhost
+       register: deploy_vm
+     - name: Instalarea masini virtuale Departamentul IT(VM2) 
+       vmware_guest:
+         hostname: "{{ physicalESX.host }}"
+         username: "{{ physicalESX.user }}"
+         password: "{{ physicalESX.password }}"
+         validate_certs: no
+         folder: / 
+         name: VM_IT_2
+         state: poweredon
+         guest_id: centos64Guest
+         disk:
+         - size_gb: 1
+           type: thin
+           datastore: datastore1
+         hardware:
+           memory_mb: 256
+           num_cpus: 1
+           scsi: paravirtual
+         cdrom:
+           type: iso
+           iso_path: "[datastore1] Core-11.1.iso"
+         networks: 
+         - name: Departamentul IT          
+           device_type: vmxnet3
+           type: dhcp
+         wait_for_ip_address: no
+       delegate_to: localhost
+       register: deploy_vm
+     - name: Instalare masini virtuale Departamentul studenti(VM1)
+       vmware_guest:
+         hostname: "{{ physicalESX.host }}"
+         username: "{{ physicalESX.user }}"
+         password: "{{ physicalESX.password }}"
+         validate_certs: no
+         folder: / 
+         name: VM_ST_1
+         state: poweredon
+         guest_id: centos64Guest
+         disk:
+         - size_gb: 1
+           type: thin
+           datastore: datastore1
+         hardware:
+           memory_mb: 512
+           num_cpus: 1
+           scsi: paravirtual
+         cdrom:
+           type: iso
+           iso_path: "[datastore1] Tiny-Linux.iso"
+         networks: 
+         - name: Departamentul Studenti
+           device_type: vmxnet3
+           type: dhcp
+         wait_for_ip_address: no
+       delegate_to: localhost
+       register: deploy_vm
+     - name: Instalare masini virtuale Departamentul studenti(VM2)
+       vmware_guest:
+         hostname: "{{ physicalESX.host }}"
+         username: "{{ physicalESX.user }}"
+         password: "{{ physicalESX.password }}"
+         validate_certs: no
+         folder: / 
+         name: VM_ST_2
+         state: poweredon
+         guest_id: centos64Guest
+         disk:
+         - size_gb: 1
+           type: thin
+           datastore: datastore1
+         hardware:
+           memory_mb: 512
+           num_cpus: 1
+           scsi: paravirtual
+         cdrom:
+           type: iso
+           iso_path: "[datastore1] Tiny-Linux.iso"
+         networks: 
+         - name: Departamentul Studenti
+           device_type: vmxnet3
+           type: dhcp
+         wait_for_ip_address: no
+       delegate_to: localhost
+       register: deploy_vm
+     - name: Instalare masini virtuale Departamentul studenti(VM3)
+       vmware_guest:
+         hostname: "{{ physicalESX.host }}"
+         username: "{{ physicalESX.user }}"
+         password: "{{ physicalESX.password }}"
+         validate_certs: no
+         folder: / 
+         name: VM_ST_3
+         state: poweredon
+         guest_id: centos64Guest
+         disk:
+         - size_gb: 1
+           type: thin
+           datastore: datastore1
+         hardware:
+           memory_mb: 256
+           num_cpus: 1
+           scsi: paravirtual
+         cdrom:
+           type: iso
+           iso_path: "[datastore1] Tiny-Linux.iso"
+         networks: 
+         - name: Departamentul Studenti
+           device_type: vmxnet3
+           type: dhcp
+         wait_for_ip_address: no
+       delegate_to: localhost
+       register: deploy_vm
+     - name: Instalare masini virtuale Departamentul studenti(VM4)
+       vmware_guest:
+         hostname: "{{ physicalESX.host }}"
+         username: "{{ physicalESX.user }}"
+         password: "{{ physicalESX.password }}"
+         validate_certs: no
+         folder: / 
+         name: VM_ST_4
+         state: poweredon
+         guest_id: centos64Guest
+         disk:
+         - size_gb: 1
+           type: thin
+           datastore: datastore1
+         hardware:
+           memory_mb: 256
+           num_cpus: 1
+           scsi: paravirtual
+         cdrom:
+           type: iso
+           iso_path: "[datastore1] Tiny-Linux.iso"
+         networks: 
+         - name: Departamentul Studenti
+           device_type: vmxnet3
+           type: dhcp
+         wait_for_ip_address: no
+       delegate_to: localhost
+       register: deploy_vm
+     - name: Instalare masini virtuale Departamentul profesori(VM1)
+       vmware_guest:
+         hostname: "{{ physicalESX.host }}"
+         username: "{{ physicalESX.user }}"
+         password: "{{ physicalESX.password }}"
+         validate_certs: no
+         folder: / 
+         name: VM_PR_1
+         state: poweredon
+         guest_id: centos64Guest
+         disk:
+         - size_gb: 1
+           type: thin
+           datastore: datastore1
+         hardware:
+           memory_mb: 256
+           num_cpus: 1
+           scsi: paravirtual
+         cdrom:
+           type: iso
+           iso_path: "[datastore1] Tiny-Linux.iso"
+         networks: 
+         - name: Departamentul Profesori
+           device_type: vmxnet3
+           type: dhcp
+         wait_for_ip_address: no
+       delegate_to: localhost
+       register: deploy_vm
+     - name: Instalare masini virtuale Departamentul profesori(VM2)
+       vmware_guest:
+         hostname: "{{ physicalESX.host }}"
+         username: "{{ physicalESX.user }}"
+         password: "{{ physicalESX.password }}"
+         validate_certs: no
+         folder: / 
+         name: VM_PR_2
+         state: poweredon
+         guest_id: centos64Guest
+         disk:
+         - size_gb: 1
+           type: thin
+           datastore: datastore1
+         hardware:
+           memory_mb: 256
+           num_cpus: 1
+           scsi: paravirtual
+         cdrom:
+           type: iso
+           iso_path: "[datastore1] Tiny-Linux.iso"
+         networks: 
+         - name: Departamentul Profesori
+           device_type: vmxnet3
+           type: dhcp
+         wait_for_ip_address: no
+       delegate_to: localhost
+       register: deploy_vm
+
+
+   
+
