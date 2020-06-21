@@ -227,11 +227,14 @@
            device_type: vmxnet3
            type: dhcp
          wait_for_ip_address: no
-     - name: Asteapta 10 secunde pana cand VM-urile devin up and running
-       pause: seconds=10
        delegate_to: localhost
        register: deploy_vm
-
+     - name: Asteapta 10 secunde pana cand VM-urile devin up and running
+       pause: seconds=10
+     - name: Asteapta 10 secunde pana cand VM-urile devin up and running
+       pause: seconds=10
+     - debug:
+        msg: "Laboratorul 1 a fost instalat cu succes!!!"
 
    
 
