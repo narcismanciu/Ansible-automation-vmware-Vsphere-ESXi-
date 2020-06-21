@@ -1,5 +1,5 @@
 ---
-- name: Instalare portgroup
+- name: Instalare portgroup laboratorul 1
   hosts: localhost
   gather_facts: False
   vars_files:
