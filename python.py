@@ -46,6 +46,7 @@ for number2 in b.read().splitlines():
 
 c = [item for item in mylist1 if item in mylist2]
 
+print(c)
 a.close()
 b.close()
 
