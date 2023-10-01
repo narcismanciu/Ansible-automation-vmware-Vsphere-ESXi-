@@ -12,7 +12,6 @@ for line in f.read().splitlines():
         dict1[line]=dict1[line]+1
 print(dict1)
 
-f.close()
 
 
 counter_dict = {}
